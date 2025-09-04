@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Planning sport – Août → Octobre 2025 (à jour)</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Planning sport – Août → Octobre 2025</title>
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin:0; padding:0; background:#f7f9fb; color:#0d1b2a; }
-  header { position:sticky; top:0; background:white; padding:12px 16px; border-bottom:1px solid #e5e9ef; display:flex; align-items:center; justify-content:space-between; gap:12px; z-index:10; }
-  .title { font-size:18px; font-weight:700; color:#0D47A1; }
-  .badges { display:flex; gap:8px; flex-wrap:wrap; }
-  .badge { padding:6px 10px; border-radius:999px; font-size:12px; background:#e8f0fe; color:#0D47A1; }
-  main { padding:12px; max-width:1100px; margin:0 auto; }
-  .card { background:white; border:1px solid #e5e9ef; border-radius:12px; padding:12px; margin-top:12px; }
-  .card h3 { margin:0 0 6px; font-size:16px; color:#0D47A1; }
-  .kv { display:flex; gap:10px; flex-wrap:wrap; }
-  .kv span { background:#eef3fd; color:#0D47A1; padding:4px 8px; border-radius:8px; font-size:12px; }
-  .month { background:white; border:1px solid #e5e9ef; border-radius:12px; margin:12px 0; padding:10px; }
-  .month h2 { margin:6px 10px 12px; font-size:18px; color:#0D47A1; }
-  .grid { display:grid; grid-template-columns: repeat(7, 1fr); gap:6px; }
-  .cell { background:var(--bg, #ffffff); border-radius:10px; padding:8px; min-height:86px; box-shadow: 0 0 0 1px rgba(13,71,161,0.06) inset; }
-  .cell.head { background:#0D47A1; color:white; font-weight:600; text-align:center; position:sticky; top:52px; z-index:5; }
-  .cell.empty { background:transparent; box-shadow:none; }
-  .date { font-weight:700; font-size:12px; color:#0D47A1; margin-bottom:4px; }
-  .line { font-size:12px; line-height:1.25; }
-  .detail { color:#394867; font-size:11px; opacity:0.9; }
-  .legend { display:flex; gap:12px; flex-wrap:wrap; padding:8px 10px 4px; }
-  .swatch { display:flex; align-items:center; gap:6px; font-size:12px; }
-  .dot { width:12px; height:12px; border-radius:3px; box-shadow:0 0 0 1px rgba(0,0,0,0.12) inset; }
-  .prog { padding:10px; }
+  :root{
+    --c1:#90CAF9; --c2:#81C784; --c3:#FFF176; --c4:#FFB74D; --c5:#EF9A9A;
+    --ink:#0d1b2a; --ink2:#394867; --brand:#0D47A1; --line:#e5e9ef; --panel:#f7f9fb;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--panel);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line);padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .title{font-weight:800;color:var(--brand);font-size:18px}
+  .badges{display:flex;gap:8px;flex-wrap:wrap}
+  .badge{background:#e8f0fe;color:var(--brand);padding:6px 10px;border-radius:999px;font-size:12px}
+  main{max-width:1100px;margin:0 auto;padding:12px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;margin:12px 0}
+  .card h3{margin:0 0 8px;color:var(--brand);font-size:16px}
+  .kv{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{background:#eef3fd;color:var(--brand);padding:4px 8px;border-radius:10px;font-size:12px}
+  .obj{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .obj .tile{border:1px solid var(--line);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:6px}
+  .obj .big{font-size:22px;font-weight:800;color:var(--brand)}
+  .obj .sub{font-size:12px;color:var(--ink2)}
+  .week{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:6px}
+  .week .day{border:1px solid var(--line);border-radius:10px;padding:6px}
+  .week .dname{font-size:12px;color:var(--ink2)}
+  .week .dval{font-size:13px;font-weight:700}
+  section.month{background:#fff;border:1px solid var(--line);border-radius:12px;margin:12px 0;padding:10px}
+  .month h2{margin:4px 6px 12px;color:var(--brand)}
+  .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+  .cell{min-height:92px;border-radius:10px;background:#fff;box-shadow:0 0 0 1px rgba(13,71,161,.06) inset;padding:8px;position:relative}
+  .head{background:var(--brand);color:#fff;text-align:center;font-weight:700;position:sticky;top:52px;z-index:5}
+  .empty{background:transparent;box-shadow:none}
+  .date{font-weight:700;font-size:12px;color:var(--brand)}
+  .pill{position:absolute;right:6px;top:6px;font-size:10px;background:#fff8;border:1px solid #0001;border-radius:6px;padding:2px 5px}
+  .line{font-size:12px;line-height:1.25;margin-top:4px}
+  .detail{font-size:11px;color:var(--ink2)}
+  .legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+  .sw{display:flex;align-items:center;gap:6px;font-size:12px}
+  .dot{width:12px;height:12px;border-radius:3px;box-shadow:0 0 0 1px #0002 inset}
+  .prog svg{width:100%;height:auto;display:block}
+  .note{font-size:12px;color:var(--ink2)}
+  @media (max-width:640px){
+    .obj{grid-template-columns:1fr}
+    .cell{min-height:88px}
+  }
 </style>
 </head>
 <body>
@@ -37,82 +56,342 @@
 </header>
 
 <main>
-  <section class="card">
-    <h3>Dernière séance</h3>
-    <div class="kv">
-      <span>📅 2025-09-03</span>
-      <span>⚡ Vélo force – vent de face</span>
-      <span>📏 19,06 km – 59’26</span>
-      <span>🚴‍♂️ 19,2 km/h moyenne</span>
-      <span>❤️ FCmoy 139 bpm (Z2→Z3)</span>
+  <!-- OBJECTIFS DU JOUR -->
+  <section class="card" id="goals">
+    <h3>Objectifs du jour</h3>
+    <div class="obj">
+      <div class="tile"><div class="sub">Bouger</div><div class="big" id="gMove">— kcal</div><div class="sub" id="gMoveSrc"></div></div>
+      <div class="tile"><div class="sub">M’entraîner</div><div class="big" id="gEx">— min</div><div class="sub" id="gExSrc"></div></div>
+      <div class="tile"><div class="sub">Se lever</div><div class="big" id="gStand">12 h</div><div class="sub">Par défaut</div></div>
     </div>
-    <p style="margin-top:8px; font-size:13px; color:#394867;">Très bien : puissance utile en hausse malgré vent défavorable. Aligné avec le plan 'force'.</p>
+    <div class="note" style="margin-top:8px">Règles : course 80 kcal/km • vélo cadence 24 kcal/km • vélo force 26 kcal/km • renfo 5 kcal/min • repos 320 kcal. (Affinables selon tes mesures)</div>
   </section>
 
+  <!-- OBJECTIFS DE LA SEMAINE -->
+  <section class="card">
+    <h3>Objectifs de la semaine (lun → dim)</h3>
+    <div class="week" id="weekGoals"></div>
+  </section>
+
+  <!-- Dernière séance -->
+  <section class="card" id="last">
+    <h3>Dernière séance</h3>
+    <div class="kv" id="lastkv"></div>
+    <p class="note" id="lastnote"></p>
+  </section>
+
+  <!-- Légende -->
   <section class="card">
     <h3>Légende intensité</h3>
     <div class="legend">
-      <div class="swatch"><div class="dot" style="background:#90CAF9"></div> 1 très facile (repos)</div>
-      <div class="swatch"><div class="dot" style="background:#81C784"></div> 2 facile</div>
-      <div class="swatch"><div class="dot" style="background:#FFF176"></div> 3 modéré</div>
-      <div class="swatch"><div class="dot" style="background:#FFB74D"></div> 4 soutenu</div>
-      <div class="swatch"><div class="dot" style="background:#EF9A9A"></div> 5 très dur</div>
+      <div class="sw"><span class="dot" style="background:var(--c1)"></span> 1 très facile (repos)</div>
+      <div class="sw"><span class="dot" style="background:var(--c2)"></span> 2 facile</div>
+      <div class="sw"><span class="dot" style="background:var(--c3)"></span> 3 modéré</div>
+      <div class="sw"><span class="dot" style="background:var(--c4)"></span> 4 soutenu</div>
+      <div class="sw"><span class="dot" style="background:var(--c5)"></span> 5 très dur</div>
     </div>
   </section>
 
-  <section class="month">
-    <h2>Août 2025</h2>
-    <div class="grid">
-      <div class="cell head">Lundi</div><div class="cell head">Mardi</div><div class="cell head">Mercredi</div><div class="cell head">Jeudi</div><div class="cell head">Vendredi</div><div class="cell head">Samedi</div><div class="cell head">Dimanche</div>
-      <!-- Exemple simplifié : tu peux continuer à développer comme avant avec chaque jour rempli -->
-      <div class="cell"><div class="date">14/8</div><div class="line">🏃‍♂️ 5,20 km<br><span class="detail">34’45 – 6’57/km</span></div></div>
-      <div class="cell"><div class="date">15/8</div><div class="line">🏃‍♂️ 6,46 km</div></div>
-      <div class="cell"><div class="date">16/8</div><div class="line">🏃‍♂️ 6,46 km</div></div>
-      <div class="cell"><div class="date">17/8</div><div class="line">🏃‍♂️ 6,33 km</div></div>
-      <div class="cell"><div class="date">19/8</div><div class="line">🚴‍♂️ 37,5 km</div><div class="line">🚴‍♂️ 7,58 km</div></div>
-      <div class="cell"><div class="date">21/8</div><div class="line">🏃‍♂️ 10,09 km</div></div>
-      <div class="cell"><div class="date">22/8</div><div class="line">🏃‍♂️ 5,01 km</div></div>
-      <div class="cell"><div class="date">25/8</div><div class="line">🚴‍♂️ 11,01 km</div></div>
-      <div class="cell"><div class="date">27/8</div><div class="line">🏃‍♂️ 5 km<br><span class="detail">27’45 – 5’33/km</span></div></div>
-      <div class="cell"><div class="date">28/8</div><div class="line">🏃‍♂️ 11 km<br><span class="detail">1h08 – 6’11/km</span></div></div>
-      <div class="cell"><div class="date">29/8</div><div class="line">🚴‍♂️ 29,24 km</div></div>
-      <div class="cell"><div class="date">30/8</div><div class="line">🚴‍♂️ 12 km<br><span class="detail">tranquille</span></div></div>
-      <div class="cell"><div class="date">31/8</div><div class="line">🏃‍♂️ Test 5 km<br><span class="detail">26’37 – 5’18/km – FCmoy 170</span></div></div>
-    </div>
-  </section>
+  <!-- Mois rendus ici -->
+  <div id="months"></div>
 
-  <section class="month">
-    <h2>Septembre 2025</h2>
-    <p style="font-size:13px;color:#394867;">⚡ Inclus la séance Vélo force du 3/09 et le plan complet.</p>
-  </section>
-
-  <section class="month">
-    <h2>Octobre 2025</h2>
-    <p style="font-size:13px;color:#394867;">📅 Plan détaillé avec fractionnés, footing, long runs et vélo.</p>
-  </section>
-
+  <!-- Progression -->
   <section class="card prog">
     <h3>Progression 5 km – Août 2025</h3>
-    <div>
-      <svg viewBox="0 0 320 160" width="100%" height="auto">
-        <rect x="0" y="0" width="320" height="160" fill="white" stroke="#e5e9ef"/>
-        <line x1="20" y1="20" x2="300" y2="20" stroke="#eef3fd"/>
-        <line x1="20" y1="50" x2="300" y2="50" stroke="#eef3fd"/>
-        <line x1="20" y1="80" x2="300" y2="80" stroke="#eef3fd"/>
-        <line x1="20" y1="110" x2="300" y2="110" stroke="#eef3fd"/>
-        <line x1="20" y1="140" x2="300" y2="140" stroke="#eef3fd"/>
-        <polyline points="20,140 160,80 300,60" fill="none" stroke="#0D47A1" stroke-width="2"/>
-        <circle cx="20" cy="140" r="3"/>
-        <circle cx="160" cy="80" r="3"/>
-        <circle cx="300" cy="60" r="3"/>
-        <text x="20" y="130" font-size="10" text-anchor="middle">34:45</text>
-        <text x="160" y="70" font-size="10" text-anchor="middle">27:45</text>
-        <text x="300" y="50" font-size="10" text-anchor="middle">26:37</text>
-      </svg>
-    </div>
-    <p style="margin:6px 0 0; font-size:13px;">34’45 → 27’45 → 26’37 &nbsp; (–8’08 en 17 jours)</p>
-    <p style="font-size:12px; color:#5b6b7a;">Astuce : ajoute cette page à l’écran d’accueil (iOS : Partager → « Sur l’écran d’accueil » ; Android : Menu ⋮ → « Ajouter à l’écran d’accueil »).</p>
+    <div id="chart"></div>
+    <p class="note">34’45 → 27’45 → 26’37  (–8’08 en 17 jours, plus bas = mieux)</p>
   </section>
 </main>
+
+<script>
+/* ========= Données ========= */
+
+// Historique réel – AOÛT (corrigé 28/08)
+const history = {
+  "2025-08-14":[{txt:"🏃‍♂️ 5,20 km", det:"34’45 – 6’57/km", inten:3, kind:"run", km:5.20}],
+  "2025-08-15":[{txt:"🏃‍♂️ 6,46 km", det:"", inten:3, kind:"run", km:6.46}],
+  "2025-08-16":[{txt:"🏃‍♂️ 6,46 km", det:"", inten:3, kind:"run", km:6.46}],
+  "2025-08-17":[{txt:"🏃‍♂️ 6,33 km", det:"", inten:3, kind:"run", km:6.33}],
+  "2025-08-19":[{txt:"🚴‍♂️ 37,50 km", det:"", inten:3, kind:"bike_cadence", km:37.5},
+                {txt:"🚴‍♂️ 7,58 km",  det:"", inten:2, kind:"bike_cadence", km:7.58}],
+  "2025-08-21":[{txt:"🏃‍♂️ 10,09 km", det:"", inten:3, kind:"run", km:10.09}],
+  "2025-08-22":[{txt:"🏃‍♂️ 5,01 km",  det:"", inten:3, kind:"run", km:5.01}],
+  "2025-08-25":[{txt:"🚴‍♂️ 11,01 km", det:"", inten:2, kind:"bike_cadence", km:11.01}],
+  "2025-08-27":[{txt:"🏃‍♂️ 5 km",      det:"27’45 – 5’33/km", inten:4, kind:"run", km:5}],
+  "2025-08-28":[{txt:"🏃‍♂️ 11,03 km",  det:"1h14 – 6’43/km",  inten:3, kind:"run", km:11.03}],  /* corrigé */
+  "2025-08-29":[{txt:"🚴‍♂️ 29,24 km", det:"", inten:3, kind:"bike_cadence", km:29.24}],
+  "2025-08-30":[{txt:"🚴‍♂️ 12 km",     det:"tranquille", inten:2, kind:"bike_cadence", km:12}],
+  "2025-08-31":[{txt:"🏃‍♂️ Test 5 km", det:"26’37 – 5’18/km – FCmoy 170", inten:5, kind:"run", km:5}],
+  // SEPTEMBRE (ajouts)
+  "2025-09-03":[{txt:"🚴‍♂️ Vélo force 19,06 km", det:"59’26 – 19,2 km/h – FC 139", inten:4, kind:"bike_force", km:19.06, min:59}],
+  /* Fusion du 04/09 (deux enregistrements → une séance) */
+  "2025-09-04":[{txt:"🏃‍♂️ 8,99 km", det:"57’25 – 6’23/km – FCmoy 154 (1re: 31’08 à 151 bpm • 2e: 26’17 à 158 bpm)", inten:3, kind:"run", km:8.99, min:57}],
+  /* Renforcement prévu demain (gainage, fentes, etc.) */
+  "2025-09-05":[{txt:"💪 Renforcement", det:"30–40’ (gainage, fentes, squats, ponts)", inten:3, kind:"strength", min:35}]
+};
+
+// Dernière séance (corrigée : Z4 surtout sur la 2e partie)
+const last = {
+  date:"2025-09-04",
+  chips:[
+    "🏃‍♂️ Endurance soutenue",
+    "📏 8,99 km – 57’25 – 6’23/km",
+    "❤️ FCmoy 154 bpm (1re: 151 • 2e: 158, Z4 surtout 2e partie)"
+  ],
+  note:"Bonne séance ‘steady’. Comme l’intensité a monté sur la 2e moitié, on programme renforcement léger demain pour bien encaisser."
+};
+
+// Règles par défaut (si rien d’autre ce jour)
+const defaults = {
+  1:{txt:"🧘 Repos", det:"", inten:1, kind:"rest"},                    // Lundi
+  3:{txt:"🚴‍♂️ Vélo force", det:"1h15–1h30", inten:4, kind:"bike_force", min:75, km:25},
+  5:{txt:"💪 Renfo / 🚴‍♂️ Cadence", det:"30–60 min", inten:3, kind:"strength_or_cadence", min:40, km:15}
+};
+
+// Plan SEPTEMBRE (par occurrence du jour dans le mois)
+const planSept = {
+  Tue: {
+    1:{txt:"🏃‍♂️ Fractionné court", det:"10×45’’ / récup 1’15–1’30", inten:4, kind:"run_frac", min:45, km:7.5},
+    2:{txt:"🏃‍♂️ Fractionné long",  det:"6×2’ @5’30/km / récup 1’30", inten:4, kind:"run_frac", min:48, km:8},
+    3:{txt:"🏃‍♂️ Fractionné court", det:"12×45’’ / récup 1’15", inten:4, kind:"run_frac", min:47, km:7.8},
+    4:{txt:"🏃‍♂️ Fractionné long",  det:"8×2’ @5’25/km / récup 1’30", inten:4, kind:"run_frac", min:50, km:8.2},
+    5:{txt:"🏃‍♂️ Frac. court (affûtage)", det:"8×45’’ / récup 1’15", inten:4, kind:"run_frac", min:35, km:6}
+  },
+  Thu: {
+    1:{txt:"🏃‍♂️ Footing", det:"45’ @6’30/km", inten:2, kind:"run", min:45, pace:"6:30"},
+    2:{txt:"🏃‍♂️ Footing", det:"50’ @6’25/km", inten:2, kind:"run", min:50, pace:"6:25"},
+    3:{txt:"🏃‍♂️ Footing", det:"50’ @6’20/km", inten:2, kind:"run", min:50, pace:"6:20"},
+    4:{txt:"🏃‍♂️ Footing", det:"40’ facile", inten:2, kind:"run", min:40, pace:"6:30"},
+    5:{txt:"🏃‍♂️ Footing", det:"35’ très facile", inten:1, kind:"run", min:35, pace:"6:45"}
+  },
+  Sat: {
+    1:{txt:"🏃‍♂️ Long run", det:"10 km dont 2×10’ @6’00/km", inten:3, kind:"run", km:10},
+    2:{txt:"🏃‍♂️ Long run", det:"12 km dont 3×10’ @6’00/km", inten:3, kind:"run", km:12},
+    3:{txt:"🏃‍♂️ Long run", det:"14 km dont 3×12’ @5’55/km", inten:3, kind:"run", km:14},
+    4:{txt:"🏃‍♂️ Test 5 km", det:"à bloc", inten:5, kind:"run", km:5}
+  },
+  Sun: {
+    1:{txt:"🚴‍♂️ Vélo", det:"36 km @18 km/h", inten:3, kind:"bike_cadence", km:36},
+    2:{txt:"🚴‍♂️ Vélo", det:"40 km @18,5 km/h", inten:3, kind:"bike_cadence", km:40},
+    3:{txt:"🚴‍♂️ Vélo", det:"50 km @19 km/h", inten:3, kind:"bike_cadence", km:50},
+    4:{txt:"🚴‍♂️ Vélo", det:"30 km facile", inten:2, kind:"bike_cadence", km:30}
+  }
+};
+
+// Plan OCTOBRE
+const planOct = {
+  Tue: {
+    1:{txt:"🏃‍♂️ Fractionné court", det:"10×1’ / récup 1’15", inten:4, kind:"run_frac", min:48, km:8},
+    2:{txt:"🏃‍♂️ Fractionné long",  det:"6×3’ @5’20/km / récup 2’", inten:4, kind:"run_frac", min:54, km:9},
+    3:{txt:"🏃‍♂️ Fractionné court", det:"12×1’ / récup 1’15", inten:4, kind:"run_frac", min:50, km:8.5},
+    4:{txt:"🏃‍♂️ Fractionné long",  det:"8×2’30’’ @5’15/km / récup 1’30", inten:4, kind:"run_frac", min:52, km:8.5}
+  },
+  Thu: {
+    1:{txt:"🏃‍♂️ Footing", det:"50’ @6’15/km", inten:2, kind:"run", min:50, pace:"6:15"},
+    2:{txt:"🏃‍♂️ Footing", det:"55’ @6’10/km", inten:2, kind:"run", min:55, pace:"6:10"},
+    3:{txt:"🏃‍♂️ Footing", det:"55’ @6’05/km", inten:2, kind:"run", min:55, pace:"6:05"},
+    4:{txt:"🏃‍♂️ Footing", det:"40’ facile", inten:2, kind:"run", min:40, pace:"6:30"}
+  },
+  Sat: {
+    1:{txt:"🏃‍♂️ Long run", det:"12 km dont 3×12’ @5’50/km", inten:3, kind:"run", km:12},
+    2:{txt:"🏃‍♂️ Long run", det:"14 km dont 3×15’ @5’45/km", inten:3, kind:"run", km:14},
+    3:{txt:"🏃‍♂️ Long run", det:"15 km dont 3×15’ @5’40/km", inten:3, kind:"run", km:15},
+    4:{txt:"🏃‍♂️ Test 10 km", det:"objectif prudent 56–55’", inten:5, kind:"run", km:10}
+  },
+  Sun: {
+    1:{txt:"🚴‍♂️ Vélo", det:"42 km @19,5 km/h", inten:3, kind:"bike_cadence", km:42},
+    2:{txt:"🚴‍♂️ Vélo", det:"48 km @20 km/h", inten:3, kind:"bike_cadence", km:48},
+    3:{txt:"🚴‍♂️ Vélo", det:"50 km @21 km/h", inten:3, kind:"bike_cadence", km:50},
+    4:{txt:"🚴‍♂️ Vélo", det:"35 km souple", inten:2, kind:"bike_cadence", km:35}
+  }
+};
+
+// Série progression 5 km (temps en minutes décimales)
+const progression = [
+  {d:"2025-08-14", min:34+45/60},
+  {d:"2025-08-27", min:27+45/60},
+  {d:"2025-08-31", min:26+37/60},
+];
+
+/* ========= Utilitaires ========= */
+const WN = ["Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"]; // JS 0=Dim
+const colorByInt = i => ({1:"var(--c1)",2:"var(--c2)",3:"var(--c3)",4:"var(--c4)",5:"var(--c5)"}[i]||"#fff");
+const ymd = (y,m,d)=>`${y}-${String(m).padStart(2,"0")}-${String(d).padStart(2,"0")}`;
+const addDays = (d,n)=>{const x=new Date(d); x.setDate(x.getDate()+n); return x;};
+function monthGrid(year,month){
+  const first = new Date(year, month-1, 1);
+  const start = addDays(first, (first.getDay()+6)%7 * -1); // lundi de la 1ère ligne
+  const days = [];
+  for(let i=0;i<42;i++){ const d = addDays(start,i); days.push({date:d, inMonth:(d.getMonth()+1)===month}); }
+  return days;
+}
+function planFor(y, m, d, planMonth){
+  const dt = new Date(y, m-1, d); const wd = dt.getDay();
+  const name = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][wd];
+  if(!planMonth) return null;
+  // occurrence du même weekday dans le mois
+  let occ=0; for(let i=1;i<=d;i++){ const t=new Date(y,m-1,i); if(t.getDay()===wd) occ++; }
+  const table = planMonth[name]; return table && table[occ] ? table[occ] : null;
+}
+
+/* ========= Rendu des mois ========= */
+function renderMonth(container, year, month, planMonth, withDefaults=true){
+  const title = new Date(year,month-1,1).toLocaleDateString("fr-FR",{month:"long",year:"numeric"});
+  const sec = document.createElement("section"); sec.className="month";
+  sec.innerHTML = `<h2>${title.charAt(0).toUpperCase()+title.slice(1)}</h2>`;
+  const grid = document.createElement("div"); grid.className="grid";
+  ["Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"].forEach(h=>{
+    const hd=document.createElement("div"); hd.className="cell head"; hd.textContent=h; grid.appendChild(hd);
+  });
+
+  const days = monthGrid(year,month);
+  for(const obj of days){
+    const d = obj.date, y=d.getFullYear(), m=d.getMonth()+1, day=d.getDate(), key=ymd(y,m,day);
+    const cell = document.createElement("div");
+    if(!obj.inMonth){ cell.className="cell empty"; grid.appendChild(cell); continue; }
+    cell.className="cell";
+
+    // priorité: historique > plan > défauts
+    let entries = history[key] ? JSON.parse(JSON.stringify(history[key])) : [];
+    let inten = entries.reduce((a,b)=>Math.max(a,b.inten),1);
+
+    if(entries.length===0){
+      const p = planFor(y,m,day,planMonth);
+      if(p){ entries.push(p); inten=Math.max(inten,p.inten); }
+      else if(withDefaults){
+        const wd = (d.getDay()+6)%7 + 1; // 1..7 (1=Lun)
+        if(defaults[wd]){ entries.push(defaults[wd]); inten=Math.max(inten,defaults[wd].inten); }
+      }
+    }
+
+    cell.style.background = colorByInt(inten);
+    cell.innerHTML = `<div class="date">${day}/${month}</div>` +
+      entries.map(e=>`<div class="line">${e.txt}${e.det?`<br><span class="detail">${e.det}</span>`:""}</div>`).join("");
+    if(history[key]) cell.insertAdjacentHTML("beforeend",`<div class="pill">✅ réel</div>`);
+    grid.appendChild(cell);
+  }
+  // petite légende en bas
+  const leg = document.createElement("div"); leg.className="legend";
+  leg.innerHTML = `
+    <div class="sw"><span class="dot" style="background:var(--c2)"></span> facile</div>
+    <div class="sw"><span class="dot" style="background:var(--c3)"></span> modéré</div>
+    <div class="sw"><span class="dot" style="background:var(--c4)"></span> soutenu</div>
+    <div class="sw"><span class="dot" style="background:var(--c5)"></span> très dur</div>`;
+  sec.appendChild(grid); sec.appendChild(leg); container.appendChild(sec);
+}
+
+/* ========= Progression (plus bas = mieux) ========= */
+(function(){
+  const el = document.getElementById("chart");
+  const xs = progression.map(p=>new Date(p.d).getTime());
+  const ys = progression.map(p=>p.min);
+  const minX=Math.min(...xs), maxX=Math.max(...xs);
+  const minY=Math.min(...ys)-0.3, maxY=Math.max(...ys)+0.3;
+  const W=320,H=160,P=20, sx=x=>P+(x-minX)/(maxX-minX||1)*(W-2*P), sy=y=>P+(y-minY)/(maxY-minY||1)*(H-2*P);
+  const pts = progression.map(p=>`${sx(new Date(p.d).getTime()).toFixed(1)},${sy(p.min).toFixed(1)}`).join(" ");
+  const dots = progression.map(p=>`<circle cx="${sx(new Date(p.d).getTime()).toFixed(1)}" cy="${sy(p.min).toFixed(1)}" r="3"/>`).join("");
+  const labels = progression.map(p=>{
+    const mm = Math.floor(p.min), ss = Math.round((p.min-mm)*60).toString().padStart(2,"0");
+    return `<text x="${sx(new Date(p.d).getTime()).toFixed(1)}" y="${(sy(p.min)-8).toFixed(1)}" font-size="10" text-anchor="middle">${mm}:${ss}</text>`;
+  }).join("");
+  el.innerHTML = `
+    <svg viewBox="0 0 ${W} ${H}">
+      <rect x="0" y="0" width="${W}" height="${H}" fill="#fff" stroke="${getComputedStyle(document.body).getPropertyValue('--line')||'#e5e9ef'}"/>
+      ${[0,1,2,3,4].map(i=>`<line x1="${P}" y1="${P+i*(H-2*P)/4}" x2="${W-P}" y2="${P+i*(H-2*P)/4}" stroke="#eef3fd"/>`).join("")}
+      <polyline points="${pts}" fill="none" stroke="${getComputedStyle(document.body).getPropertyValue('--brand')||'#0D47A1'}" stroke-width="2"/>
+      ${dots}${labels}
+    </svg>`;
+})();
+
+/* ========= Objectifs (calcul) ========= */
+function paceStrToMinPerKm(str){ if(!str) return null; const [m,s]=str.split(":").map(x=>parseInt(x,10)||0); return m + s/60; }
+function estimateFromEntry(e){
+  const RUN_KCAL_PER_KM=80, BIKE_CAD=24, BIKE_FORCE=26, STRENGTH_PER_MIN=5, REST_KCAL=320;
+  if(e.kind==="run" || e.kind==="run_frac"){
+    let km = e.km;
+    if(!km && e.min && e.pace){ km = e.min / paceStrToMinPerKm(e.pace); }
+    if(!km && e.min){ km = e.min / 6.4; }
+    const min = e.min || Math.round((km||7.5)*6.3);
+    const kcal = Math.round((km||7.5)*RUN_KCAL_PER_KM);
+    return {kcal, min};
+  }
+  if(e.kind==="bike_cadence"){
+    const km = e.km || 36; const kcal = Math.round(km*BIKE_CAD), min = e.min || Math.round(km/19*60);
+    return {kcal, min};
+  }
+  if(e.kind==="bike_force"){
+    const km = e.km || 25; const kcal = Math.round(km*BIKE_FORCE), min = e.min || 75;
+    return {kcal, min};
+  }
+  if(e.kind==="strength_or_cadence"){
+    const min = e.min || 40; const km = e.km || 15;
+    const kcal = Math.max(min*STRENGTH_PER_MIN, Math.round(km*BIKE_CAD));
+    return {kcal, min};
+  }
+  if(e.kind==="strength"){
+    const min = e.min || 35; const kcal = min*STRENGTH_PER_MIN;
+    return {kcal, min};
+  }
+  if(e.kind==="rest"){ return {kcal:REST_KCAL, min:0}; }
+  return {kcal:320, min:0};
+}
+function mergeDayTargets(entries){
+  return entries.map(estimateFromEntry).reduce((a,b)=>({kcal:a.kcal+b.kcal,min:a.min+b.min}),{kcal:0,min:0});
+}
+function getPlanMonth(y,m){ if(m===9) return planSept; if(m===10) return planOct; return null; }
+function computeTargetsFor(dateObj){
+  const y=dateObj.getFullYear(), m=dateObj.getMonth()+1, d=dateObj.getDate(), key=ymd(y,m,d);
+  if(history[key]) return {src:"Calculé sur séance réelle/programmée", ...mergeDayTargets(history[key])};
+  const p = planFor(y,m,d,getPlanMonth(y,m));
+  if(p) return {src:"Basé sur le plan", ...mergeDayTargets([p])};
+  const wd=(dateObj.getDay()+6)%7+1; if(defaults[wd]) return {src:"Basé sur jour par défaut", ...mergeDayTargets([defaults[wd]])};
+  return {src:"Repos", kcal:320, min:0};
+}
+function renderDayGoals(elMove,elEx,elStand,elSrc, dateObj){
+  const t=computeTargetsFor(dateObj);
+  elMove.textContent = `${t.kcal} kcal`;
+  elEx.textContent   = `${t.min} min`;
+  elStand.textContent= `12 h`;
+  elSrc.textContent  = t.src;
+}
+(function renderTodayGoals(){
+  const today = new Date(); // date locale
+  renderDayGoals(
+    document.getElementById("gMove"),
+    document.getElementById("gEx"),
+    document.getElementById("gStand"),
+    document.getElementById("gMoveSrc"),
+    today
+  );
+})();
+(function renderWeekGoals(){
+  const mount=document.getElementById("weekGoals");
+  const today=new Date(); const dow=(today.getDay()+6)%7; const monday=addDays(today,-dow);
+  for(let i=0;i<7;i++){
+    const d=addDays(monday,i);
+    const t=computeTargetsFor(d);
+    const div=document.createElement("div"); div.className="day";
+    div.innerHTML = `<div class="dname">${["Lun","Mar","Mer","Jeu","Ven","Sam","Dim"][i]} ${String(d.getDate()).padStart(2,"0")}/${d.getMonth()+1}</div>
+                     <div class="dval">${t.kcal} kcal • ${t.min} min</div>
+                     <div class="note" style="margin-top:2px">${t.src}</div>`;
+    mount.appendChild(div);
+  }
+})();
+
+/* ========= Carte dernière séance ========= */
+(function(){
+  const kv=document.getElementById("lastkv");
+  kv.innerHTML = [`📅 ${last.date}`].concat(last.chips).map(t=>`<span class="chip">${t}</span>`).join("");
+  document.getElementById("lastnote").textContent = last.note;
+})();
+
+/* ========= Rendu des mois ========= */
+(function(){
+  const mount = document.getElementById("months");
+  renderMonth(mount,2025,8,null,false);      // Août = historique uniquement
+  renderMonth(mount,2025,9,planSept,true);   // Septembre = plan + défauts + historique
+  renderMonth(mount,2025,10,planOct,true);   // Octobre  = plan + défauts
+})();
+</script>
 </body>
 </html>
